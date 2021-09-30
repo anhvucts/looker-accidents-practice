@@ -45,7 +45,7 @@ explore: accidents {
   label: "Accidents data"
   description: "Insights on accidents' statistics"
   join: accidents_with_city {
-    sql_on: ${accidents.date_date}  = ${accidents_with_city.date_date};;
+    sql_on: ${accidents.accident_index}  = ${accidents_with_city.accident_index};;
     relationship: one_to_one
     type: left_outer
   }

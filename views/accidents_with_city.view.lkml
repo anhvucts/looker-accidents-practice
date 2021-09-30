@@ -2,8 +2,7 @@
 view: accidents_with_city {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `UK_accidents_0515.accidents_with_city`
-    ;;
+  sql_table_name: `UK_accidents_0515.accidents_with_city`;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 

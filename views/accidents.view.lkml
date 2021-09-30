@@ -28,6 +28,7 @@ view: accidents {
 
   dimension: _2nd_road_number {
     type: number
+    primary_key: yes
     sql: ${TABLE}._2nd_Road_Number ;;
   }
 
@@ -202,205 +203,171 @@ view: accidents {
 
   measure: total__1st_road_class {
     type: sum
-    hidden: yes
     sql: ${_1st_road_class} ;;
   }
 
   measure: average__1st_road_class {
     type: average
-    hidden: yes
     sql: ${_1st_road_class} ;;
   }
 
   measure: total__1st_road_number {
     type: sum
-    hidden: yes
     sql: ${_1st_road_number} ;;
   }
 
   measure: average__1st_road_number {
     type: average
-    hidden: yes
     sql: ${_1st_road_number} ;;
   }
 
   measure: total__2nd_road_class {
     type: sum
-    hidden: yes
     sql: ${_2nd_road_class} ;;
   }
 
   measure: average__2nd_road_class {
     type: average
-    hidden: yes
     sql: ${_2nd_road_class} ;;
   }
 
   measure: total__2nd_road_number {
     type: sum
-    hidden: yes
     sql: ${_2nd_road_number} ;;
   }
 
   measure: average__2nd_road_number {
     type: average
-    hidden: yes
     sql: ${_2nd_road_number} ;;
   }
 
   measure: total_accident_severity {
     type: sum
-    hidden: yes
     sql: ${accident_severity} ;;
   }
 
   measure: average_accident_severity {
     type: average
-    hidden: yes
     sql: ${accident_severity} ;;
   }
 
   measure: total_day_of_week {
     type: sum
-    hidden: yes
     sql: ${day_of_week} ;;
   }
 
   measure: average_day_of_week {
     type: average
-    hidden: yes
     sql: ${day_of_week} ;;
   }
 
   measure: total_latitude {
     type: sum
-    hidden: yes
     sql: ${latitude} ;;
   }
 
   measure: average_latitude {
     type: average
-    hidden: yes
     sql: ${latitude} ;;
   }
 
   measure: total_local_authority__district_ {
     type: sum
-    hidden: yes
     sql: ${local_authority__district_} ;;
   }
 
   measure: average_local_authority__district_ {
     type: average
-    hidden: yes
     sql: ${local_authority__district_} ;;
   }
 
   measure: total_location_easting_osgr {
     type: sum
-    hidden: yes
     sql: ${location_easting_osgr} ;;
   }
 
   measure: average_location_easting_osgr {
     type: average
-    hidden: yes
     sql: ${location_easting_osgr} ;;
   }
 
   measure: total_location_northing_osgr {
     type: sum
-    hidden: yes
     sql: ${location_northing_osgr} ;;
   }
 
   measure: average_location_northing_osgr {
     type: average
-    hidden: yes
     sql: ${location_northing_osgr} ;;
   }
 
   measure: total_longitude {
     type: sum
-    hidden: yes
     sql: ${longitude} ;;
   }
 
   measure: average_longitude {
     type: average
-    hidden: yes
     sql: ${longitude} ;;
   }
 
   measure: total_number_of_casualties {
     type: sum
-    hidden: yes
     sql: ${number_of_casualties} ;;
   }
 
   measure: average_number_of_casualties {
     type: average
-    hidden: yes
     sql: ${number_of_casualties} ;;
   }
 
   measure: total_number_of_vehicles {
     type: sum
-    hidden: yes
     sql: ${number_of_vehicles} ;;
   }
 
   measure: average_number_of_vehicles {
     type: average
-    hidden: yes
     sql: ${number_of_vehicles} ;;
   }
 
   measure: total_police_force {
     type: sum
-    hidden: yes
     sql: ${police_force} ;;
   }
 
   measure: average_police_force {
     type: average
-    hidden: yes
     sql: ${police_force} ;;
   }
 
   measure: total_speed_limit {
     type: sum
-    hidden: yes
     sql: ${speed_limit} ;;
   }
 
   measure: average_speed_limit {
     type: average
-    hidden: yes
     sql: ${speed_limit} ;;
   }
 
   measure: total_urban_or_rural_area {
     type: sum
-    hidden: yes
     sql: ${urban_or_rural_area} ;;
   }
 
   measure: average_urban_or_rural_area {
     type: average
-    hidden: yes
     sql: ${urban_or_rural_area} ;;
   }
 
   measure: total_year {
     type: sum
-    hidden: yes
     sql: ${year} ;;
   }
 
-  measure: average_year {
-    type: average
-    hidden: yes
-    sql: ${year} ;;
-  }
+  # measure: average_year {
+  #   type: average
+  #   sql: ${year} ;;
+  # }
 }
