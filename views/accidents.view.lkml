@@ -10,7 +10,7 @@ view: accidents {
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called " 1st Road Class" in Explore.
-
+  view_label: "Accidents"
   dimension: _1st_road_class {
     type: number
     sql: ${TABLE}._1st_Road_Class ;;
@@ -28,13 +28,13 @@ view: accidents {
 
   dimension: _2nd_road_number {
     type: number
-    primary_key: yes
     sql: ${TABLE}._2nd_Road_Number ;;
   }
 
   dimension: accident_index {
     type: string
     sql: ${TABLE}.Accident_Index ;;
+    primary_key: yes
   }
 
   dimension: accident_severity {

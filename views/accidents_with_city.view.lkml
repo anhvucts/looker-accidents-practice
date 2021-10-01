@@ -9,7 +9,7 @@ view: accidents_with_city {
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called " 1st Road Class" in Explore.
-
+  view_label: "Accidents"
   dimension: _1st_road_class {
     type: number
     sql: ${TABLE}._1st_Road_Class ;;
@@ -192,6 +192,27 @@ view: accidents_with_city {
     sql: ${TABLE}.Year ;;
   }
 
+  dimension: accident_severity_in_text {
+    type: string
+    case: {
+      when: {
+        sql: ${accident_severity} = 1;;
+        label: "Minor"
+      }
+
+      when : {
+        sql: ${accident_severity} = 2 ;;
+        label: "Medior"
+      }
+
+      when : {
+        sql: ${accident_severity} = 3 ;;
+        label: "Serious"
+      }
+      else: "Unknown"
+    }
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
@@ -338,25 +359,21 @@ view: accidents_with_city {
 
   measure: total_number_of_casualties {
     type: sum
-    hidden: yes
     sql: ${number_of_casualties} ;;
   }
 
   measure: average_number_of_casualties {
     type: average
-    hidden: yes
     sql: ${number_of_casualties} ;;
   }
 
   measure: total_number_of_vehicles {
     type: sum
-    hidden: yes
     sql: ${number_of_vehicles} ;;
   }
 
   measure: average_number_of_vehicles {
     type: average
-    hidden: yes
     sql: ${number_of_vehicles} ;;
   }
 
@@ -406,5 +423,18 @@ view: accidents_with_city {
     type: average
     hidden: yes
     sql: ${year} ;;
+  }
+
+  # find out avg number of accidents per week
+  measure: num_weeks {
+    type: number
+    sql: COUNT(DISTINCT(${date_week})) ;;
+  }
+  # Avg weekly accidents
+  measure: num_weekly_accidents {
+    label: "Average weekly accidents"
+    type: number
+    sql: ${total_number_of_casualties}/${num_weeks} ;;
+    value_format: "0"
   }
 }

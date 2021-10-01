@@ -30,10 +30,13 @@ explore: days_of_week_lookup {}
 explore: local_authority_district {}
 
 explore: accidents_with_city {
-  hidden: yes
+  label: "Accidents data"
+  description: "Insights on accidents' statistics"
 }
 
-explore: audit {}
+explore: audit {
+  hidden: yes
+}
 
 explore: local_authority_highway {}
 
@@ -42,13 +45,7 @@ explore: accidents_with_city_tbl {
 }
 
 explore: accidents {
-  label: "Accidents data"
-  description: "Insights on accidents' statistics"
-  join: accidents_with_city {
-    sql_on: ${accidents.accident_index}  = ${accidents_with_city.accident_index};;
-    relationship: one_to_one
-    type: left_outer
-  }
+  hidden: yes
 }
 
 explore: accidents2 {
