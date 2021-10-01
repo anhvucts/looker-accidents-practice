@@ -437,4 +437,14 @@ view: accidents_with_city {
     sql: ${total_number_of_casualties}/${num_weeks} ;;
     value_format: "0"
   }
+
+  measure: is_frequent_accident {
+    type: yesno
+    sql: ${num_weekly_accidents} > 30 ;;
+  }
+
+  measure: is_accident_hotspot {
+    type: string # HAS TO BE STRING
+    sql: CASE WHEN ${is_frequent_accident} THEN 'Yes' ELSE 'No';;
+  }
 }
